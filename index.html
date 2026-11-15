@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberNest AI</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#080d1b;color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ padding:22px;text-align:center;
+ background:#111b35;
+ border-bottom:1px solid #26365d;
+}
+header h1{color:#6c9cff;margin:0}
+header p{color:#aab9d5}
+.chat{
+ max-width:650px;margin:25px auto;
+ padding:15px;
+}
+#messages{
+ height:55vh;overflow-y:auto;
+ background:#111a2d;border-radius:15px;
+ padding:15px;
+}
+.msg{
+ padding:12px 15px;margin:12px 0;
+ border-radius:12px;max-width:85%;
+ line-height:1.5;
+}
+.bot{background:#243657}
+.user{background:#3456a1;margin-left:auto}
+.controls{display:flex;gap:8px;margin-top:15px}
+input{
+ flex:1;min-width:0;padding:15px;
+ border:0;border-radius:10px;
+ background:#1b2944;color:white;
+}
+button{
+ padding:14px;border:0;border-radius:10px;
+ background:#527eff;color:white;
+ font-weight:bold;
+}
+footer{text-align:center;color:#8997b4;padding:20px}
+</style>
+</head>
+<body>
+<header>
+<h1>🚀 CyberNest AI</h1>
+<p>Your Smart AI Assistant</p>
+</header>
+<div class="chat">
+<div id="messages">
+<div class="msg bot">
+Hello! 👋 Welcome to CyberNest AI.<br>
+How can I help you today?
+</div>
+</div>
+<div class="controls">
+<input id="question" placeholder="Ask me anything...">
+<button onclick="send()">Send</button>
+</div>
+</div>
+<footer>Powered by CyberNest</footer>
+<script>
+function send(){
+ let input=document.getElementById("question");
+ let q=input.value.trim();
+ if(!q)return;
+ let box=document.getElementById("messages");
+ box.innerHTML+=`<div class="msg user">${escapeHTML(q)}</div>`;
+ box.innerHTML+=`<div class="msg bot">I'm your CyberNest AI demo! Real AI connection will be added next. 🤖</div>`;
+ input.value="";
+ box.scrollTop=box.scrollHeight;
+}
+function escapeHTML(s){
+ return s.replace(/[&<>"']/g,c=>({
+ '&':'&amp;','<':'&lt;','>':'&gt;',
+ '"':'&quot;',"'":'&#39;'
+ }[c]));
+}
+</script>
+</body>
+  </html>
+  
