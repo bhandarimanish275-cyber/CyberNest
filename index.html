@@ -8,69 +8,99 @@
 <style>
 *{box-sizing:border-box}
 body{
- margin:0;background:#050b1b;color:white;
+ margin:0;
+ background:#050b1b;
+ color:white;
  font-family:Arial,sans-serif;
 }
 header{
- padding:25px 15px;text-align:center;
+ padding:25px 12px;
+ text-align:center;
  background:linear-gradient(120deg,#101c42,#24104b);
- border-bottom:1px solid #315aff;
+ border-bottom:2px solid #315aff;
 }
 .logo{font-size:48px}
 header h1{
- margin:8px;color:#70aaff;
+ margin:8px;
+ color:#70aaff;
  font-size:32px;
 }
 header p{color:#b8c7ef}
 .container{
- max-width:750px;margin:25px auto;padding:15px;
+ max-width:750px;
+ margin:25px auto;
+ padding:15px;
 }
 .card{
- background:#101a33;border:1px solid #315aff;
- border-radius:20px;padding:18px;
+ background:#101a33;
+ border:1px solid #315aff;
+ border-radius:20px;
+ padding:18px;
  box-shadow:0 0 20px #1239aa55;
 }
 .welcome{
- text-align:center;padding:15px;
+ text-align:center;
+ padding:15px;
 }
 .welcome h2{color:#80aaff}
 #messages{
- height:48vh;min-height:300px;
- overflow-y:auto;padding:12px;
- background:#080f22;border-radius:14px;
+ height:48vh;
+ min-height:300px;
+ overflow-y:auto;
+ padding:12px;
+ background:#080f22;
+ border-radius:14px;
 }
 .msg{
- padding:13px 15px;margin:12px 0;
- border-radius:14px;max-width:88%;
- line-height:1.5;overflow-wrap:anywhere;
+ padding:13px 15px;
+ margin:12px 0;
+ border-radius:14px;
+ max-width:88%;
+ line-height:1.5;
+ overflow-wrap:anywhere;
 }
 .bot{background:#23375f}
 .user{background:#315fc4;margin-left:auto}
 .controls{
- display:flex;gap:8px;margin-top:15px;
+ display:flex;
+ gap:8px;
+ margin-top:15px;
 }
 input{
- flex:1;min-width:0;padding:15px;
- border-radius:12px;border:1px solid #527eff;
- background:#172747;color:white;font-size:16px;
+ flex:1;
+ min-width:0;
+ padding:15px;
+ border-radius:12px;
+ border:1px solid #527eff;
+ background:#172747;
+ color:white;
+ font-size:16px;
 }
 button{
- border:0;border-radius:12px;padding:13px 17px;
+ border:0;
+ border-radius:12px;
+ padding:13px 17px;
  background:linear-gradient(120deg,#168cff,#8c42ff);
- color:white;font-weight:bold;font-size:15px;
+ color:white;
+ font-weight:bold;
+ font-size:15px;
 }
-button:active{opacity:.8}
 .quick{
- display:flex;gap:8px;flex-wrap:wrap;
+ display:flex;
+ gap:8px;
+ flex-wrap:wrap;
  margin-top:14px;
 }
 .quick button{
- background:#1b2b50;border:1px solid #4268c9;
+ background:#1b2b50;
+ border:1px solid #4268c9;
  font-size:13px;
 }
 footer{
- text-align:center;color:#899ac2;
- padding:25px;font-size:13px;
+ text-align:center;
+ color:#899ac2;
+ padding:25px;
+ font-size:13px;
 }
 </style>
 </head>
@@ -98,7 +128,8 @@ footer{
   </div>
 
   <div class="controls">
-   <input id="question" placeholder="Ask me anything..."
+   <input id="question"
+   placeholder="Ask me anything..."
    onkeydown="if(event.key==='Enter')send()">
    <button onclick="send()">Send ➤</button>
   </div>
@@ -138,7 +169,6 @@ function send(){
  bot.className="msg bot";
 
  let answer="I am CyberNest AI demo. Real AI connection is coming soon! 🚀";
-
  const s=q.toLowerCase();
 
  if(s.includes("hello")||s.includes("hi")||s.includes("नमस्ते")){
@@ -151,7 +181,7 @@ function send(){
  answer="पढ़ाई में मैं तुम्हारी मदद कर सकता हूँ! 📚 अपना विषय और सवाल बताओ।";
  }
  else if(s.includes("fun fact")){
- answer="Fun Fact! 🧠 इंसानी दिमाग और AI दोनों जानकारी को अलग-अलग तरीकों से प्रोसेस करते हैं!";
+ answer="Fun Fact! 🧠 AI अलग-अलग तरीकों से जानकारी को प्रोसेस करता है!";
  }
  else if(s.includes("who are you")||s.includes("tum kaun")){
  answer="मैं CyberNest AI हूँ! तुम्हारा स्मार्ट डिजिटल असिस्टेंट। 🚀";
@@ -165,4 +195,3 @@ function send(){
 </script>
 </body>
 </html>
-
